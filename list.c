@@ -117,6 +117,7 @@ void CopyList(ListType l,ListType *newL)
     Node *q=(Node*)malloc(sizeof(Node));
     q->info=l.head->info;
     newL->head=q;
+    newL->size=l.size;
     for(i=1;i<=l.size;i++)
     {
         Node *p=(Node*)malloc(sizeof(Node));
