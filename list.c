@@ -109,14 +109,20 @@ EntryType CopyElement(ListType L,int pos)
 //4
 void CopyList(ListType l,ListType *newL)
 {
-    Node *q;
+    //Node *q;
     int i;
-    *newL=l;
+    //*newL=l;
     //newL->head=l.head;
     //newL->size=l.size;
-    for(i=0,q=l.head;i<=l.size;i++)
+    Node *q=(Node*)malloc(sizeof(Node));
+    q->info=l.head->info;
+    newL->head=q;
+    for(i=1;i<=l.size;i++)
     {
-        q->info=(l.head)->info;
-        q->next=(l.head)->next;
+        Node *p=(Node*)malloc(sizeof(Node));
+        q->next=p;
+        p->info=(l.head)->info;
+        p->next=(l.head)->next;
+
     }
 }
